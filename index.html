@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Grade Calculater</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="container">
+		<center>
+		<h1>Student Grade Calculator</h1>    
+	<div class="screen-body-item">
+		<div class="app">
+		<div class="form-group">
+			<input
+			type="text"
+			class="form-control"
+			placeholder="CHEMISTRY"
+			id="chemistry"/>
+		</div>
+		<div class="form-group">
+			<input
+			type="text"
+			class="form-control"
+			placeholder="HINDI"
+			id="hindi"/>
+		</div>
+		<div class="form-group">
+			<input
+			type="text"
+			class="form-control"
+			placeholder="MATHS"
+			id="maths"/>
+		</div>
+		<div class="form-group">
+			<input
+			type="text"
+			class="form-control"
+			placeholder="PHYSICS"
+			id="phy"/>
+		</div>
+		<div>
+			<input
+			type="button"
+			value="show Percentage"
+			class="form-button"
+			onclick="calculate()"/>
+		</div>
+		</div>
+	</div>
+	<div class="form-group showdata">
+		<p id="showdata"></p>
+	</div>
+	</div>
+</center>
+
+	<script>
+		const calculate = () =>
+		{
+			let chemistry = document.getElementById('chemistry').value;
+			let hindi = document.getElementById('hindi').value;
+			let maths = document.getElementById('maths').value;
+			let phy = document.getElementById('phy').value;
+			let grades = "";
+
+			let totalGrades = parseFloat(chemistry) + parseFloat(hindi) +
+			parseFloat(maths) + parseFloat(phy);
+
+			alert("Total Marks = "+totalGrades);
+
+			let Perc = (totalGrades/400)*100;
+			alert("Percentage is = " +Perc);
+
+			if(Perc <=100 && Perc >=80)
+			{
+				grades = "A";
+			}
+			 
+			else if(Perc <=79 && Perc >=60)
+			{
+				grades = "B";
+			}
+			
+			else if(Perc <=59 && Perc >=40)
+			{
+				grades = "C";
+			}
+			else
+			{
+				grades = "F";
+			}
+			if(Perc>=40){
+			document.getElementById('showdata').innerHTML = 
+			` Out of 400 your total Marks is ${totalGrades} and Percentage is ${Perc}%.
+			Your Grade is ${grades}. You are Pass`;
+			}
+			else
+			{
+			 document.getElementById('showdata').innerHTML = 
+			` Out of 400 your total Marks is ${totalGrades} and Percentage is ${Perc}%.
+			Your Grade is ${grades}. You are Fail`;
+			}
+		}
+	</script>
+</body>
+</html>

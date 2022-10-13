@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+    background: whitesmoke;
+    font-size: 12px;
+    }
+    
+    .container {
+    flex: 0 1 700px;
+    margin: auto;
+    padding: 10px;
+    }
+    
+    .screen-body-item {
+    flex: 1;
+    padding: 50px;
+    }
+    input {
+    margin: 10px 10px 10px;
+    }
+    .showdata {
+    color: black;
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+
+    .form-button:hover
+    {
+        background-color: rgb(149, 187, 149);
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+    .form
+    {
+        align-items: center;
+        
+    }
